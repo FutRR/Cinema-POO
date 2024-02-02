@@ -13,6 +13,8 @@ class Genre
 
     }
 
+    /* GETTERS & SETTERS */
+
     public function getNom(): string
     {
         return $this->nom;
@@ -41,6 +43,8 @@ class Genre
     {
         $this->films[] = $film;
     }
+
+    /* DISPLAY */
 
     public function getInfos()
     {

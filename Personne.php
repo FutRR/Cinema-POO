@@ -16,6 +16,8 @@ class Personne
         $this->sexe = $sexe;
     }
 
+    /* GETTERS & SETTERS */
+
     public function getNom(): string
     {
         return $this->nom;
@@ -70,6 +72,8 @@ class Personne
         $interval = $this->dateNaissance->diff($now);
         return $interval->format("%Y");
     }
+
+    /* DISPLAY */
 
     public function __toString()
     {

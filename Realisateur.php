@@ -27,6 +27,8 @@ class Realisateur extends Personne
         $this->films[] = $film;
     }
 
+    /* DISPLAY */
+
     public function getInfos()
     {
         $result = "Films réalisés par " . parent::__toString() . " :<br>";

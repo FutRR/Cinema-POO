@@ -8,6 +8,7 @@ class Film
     private Realisateur $realisateur;
     private Genre $genre;
 
+
     public function __construct(string $titre, string $sortieFR, int $duree, Realisateur $realisateur, Genre $genre)
     {
         $this->titre = $titre;
@@ -17,9 +18,10 @@ class Film
         $this->realisateur->addFilms($this);
         $this->genre = $genre;
         $this->genre->addFilms($this);
-
-
     }
+
+    /* GETTERS & SETTERS */
+
 
     public function getTitre(): string
     {
@@ -62,6 +64,8 @@ class Film
         $result = $this->sortieFR->format("d-m-Y");
         return $result;
     }
+
+    /* DISPLAY */
 
     public function __toString()
     {
