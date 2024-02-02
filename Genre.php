@@ -46,7 +46,7 @@ class Genre
 
     /* DISPLAY */
 
-    public function getInfos()
+    public function afficherFilms()
     {
         $result = "Films de $this->nom :<br>";
         foreach ($this->films as $film) {

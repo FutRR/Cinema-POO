@@ -37,16 +37,16 @@ class Role
         return $this;
     }
 
-    public function addCastings(Casting $casting)
+    public function addCastings(Acteur $acteur)
     {
-        $this->castings[] = $casting;
+        $this->castings[] = $acteur;
     }
 
-    public function getInfos()
+    public function afficherActeurs()
     {
         $result = "Acteurs ayant joué le role de $this->nom :<br>";
-        foreach ($this->castings as $casting) {
-            $result .= "- $casting<br>";
+        foreach ($this->castings as $acteur) {
+            $result .= "- $acteur<br>";
         }
         return $result;
     }

@@ -9,9 +9,11 @@ class Casting
     public function __construct(Acteur $acteur, Role $role, Film $film)
     {
         $this->acteur = $acteur;
+        $this->acteur->addCastings($film);
         $this->role = $role;
-        $this->role->addCastings($this);
+        $this->role->addCastings($acteur);
         $this->film = $film;
+        $this->film->addCastings($this);
     }
 
     /* GETTERS & SETTERS */
@@ -51,8 +53,5 @@ class Casting
 
         return $this;
     }
-
-    /* DISPLAY */
-
 
 }

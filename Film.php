@@ -7,6 +7,8 @@ class Film
     private int $duree;
     private Realisateur $realisateur;
     private Genre $genre;
+    private array $castings;
+
 
 
     public function __construct(string $titre, string $sortieFR, int $duree, Realisateur $realisateur, Genre $genre)
@@ -18,6 +20,7 @@ class Film
         $this->realisateur->addFilms($this);
         $this->genre = $genre;
         $this->genre->addFilms($this);
+        $this->castings = [];
     }
 
     /* GETTERS & SETTERS */
@@ -58,6 +61,22 @@ class Film
 
         return $this;
     }
+    public function getCastings()
+    {
+        return $this->castings;
+    }
+
+    public function setCastings($castings)
+    {
+        $this->castings = $castings;
+
+        return $this;
+    }
+
+    public function addCastings(Casting $casting)
+    {
+        $this->castings[] = $casting;
+    }
 
     public function getDate()
     {
@@ -71,5 +90,14 @@ class Film
     {
         return "$this->titre | $this->duree minutes | " . $this->getDate() . " (France)<br>";
     }
+
+    public function afficherCasting()
+    {
+        foreach ($this->castings as $casting) {
+            $result = "Dans le film " . $casting->getFilm() . ", " . $casting->getRole() . " a été joué par " . $casting->getActeur() . "<br>";
+        }
+        return $result;
+    }
+
 
 }
