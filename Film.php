@@ -6,14 +6,19 @@ class Film
     private DateTime $sortieFR;
     private int $duree;
     private Realisateur $realisateur;
+    private Genre $genre;
 
-    public function __construct(string $titre, string $sortieFR, int $duree, Realisateur $realisateur)
+    public function __construct(string $titre, string $sortieFR, int $duree, Realisateur $realisateur, Genre $genre)
     {
         $this->titre = $titre;
         $this->sortieFR = new DateTime($sortieFR);
         $this->duree = $duree;
         $this->realisateur = $realisateur;
         $this->realisateur->addFilms($this);
+        $this->genre = $genre;
+        $this->genre->addFilms($this);
+
+
     }
 
     public function getTitre(): string

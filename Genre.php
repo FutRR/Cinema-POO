@@ -3,10 +3,14 @@
 class Genre
 {
     private string $nom;
+    private array $films;
 
-    public function __construc(string $nom)
+
+    public function __construct(string $nom)
     {
         $this->nom = $nom;
+        $this->films = [];
+
     }
 
     public function getNom(): string
@@ -20,4 +24,32 @@ class Genre
 
         return $this;
     }
+
+    public function getFilms()
+    {
+        return $this->films;
+    }
+
+    public function setFilms($films)
+    {
+        $this->films = $films;
+
+        return $this;
+    }
+
+    public function addFilms(Film $film)
+    {
+        $this->films[] = $film;
+    }
+
+    public function getInfos()
+    {
+        $result = "Films de $this->nom :<br>";
+        foreach ($this->films as $film) {
+            $result .= " $film";
+        }
+        $result .= "<br>";
+        return $result;
+    }
+
 }
