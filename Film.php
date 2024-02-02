@@ -8,12 +8,11 @@ class Film
     private string $synopsis;
     private Realisateur $realisateur;
 
-    public function __construct(string $titre, string $sortieFR, int $duree, string $synopsis, Realisateur $realisateur)
+    public function __construct(string $titre, string $sortieFR, int $duree, Realisateur $realisateur)
     {
         $this->titre = $titre;
         $this->sortieFR = new DateTime($sortieFR);
         $this->duree = $duree;
-        $this->synopsis = $synopsis;
         $this->realisateur = $realisateur;
         $this->realisateur->addFilms($this);
     }
@@ -54,27 +53,27 @@ class Film
         return $this;
     }
 
-    public function getSynopsis(): string
-    {
-        return $this->synopsis;
-    }
+    // public function getSynopsis(): string
+    // {
+    //     return $this->synopsis;
+    // }
 
-    public function setSynopsis(string $synopsis)
-    {
-        $this->synopsis = $synopsis;
+    // public function setSynopsis(string $synopsis)
+    // {
+    //     $this->synopsis = $synopsis;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getDate()
     {
-        $result = $this->sortieFR->format("d-m-Y");
-        return $result;
+        $result = $this->sortieFR->format("Y");
+        return str_replace("-", " ", $result);
     }
 
     public function __toString()
     {
-        return "$this->titre | $this->duree, sorti le " . $this->getDate() . " en France<br>";
+        return "$this->titre | $this->duree minutes, sorti en " . $this->getDate() . " en France<br>";
     }
 
 }
