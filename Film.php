@@ -6,13 +6,16 @@ class Film
     private DateTime $sortieFR;
     private int $duree;
     private string $synopsis;
+    private Realisateur $realisateur;
 
-    public function __construct(string $titre, string $sortieFR, int $duree, string $synopsis)
+    public function __construct(string $titre, string $sortieFR, int $duree, string $synopsis, Realisateur $realisateur)
     {
         $this->titre = $titre;
         $this->sortieFR = new DateTime($sortieFR);
         $this->duree = $duree;
         $this->synopsis = $synopsis;
+        $this->realisateur = $realisateur;
+        $this->realisateur->addFilms($this);
     }
 
     public function getTitre(): string
@@ -61,6 +64,17 @@ class Film
         $this->synopsis = $synopsis;
 
         return $this;
+    }
+
+    public function getDate()
+    {
+        $result = $this->sortieFR->format("d-m-Y");
+        return $result;
+    }
+
+    public function __toString()
+    {
+        return "$this->titre | $this->duree, sorti le " . $this->getDate() . " en France<br>";
     }
 
 }
