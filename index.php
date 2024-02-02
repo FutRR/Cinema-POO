@@ -11,10 +11,12 @@ $aventure = new Genre("Aventure");
 // Role
 $hanSolo = new Role("Han Solo");
 $indianaJones = new Role("Indiana Jones");
+$marion = new Role("Marion Ravenwood");
 
 // Acteurs
 $ford = new Acteur("Ford", "Harrison", "13-07-1942", "M");
 $ehrenreich = new Acteur("Ehrenreich", "Alden", "22-11-1989", "M");
+$allen = new Acteur("Allen", "Karen", "05-10-1951", "F");
 
 // Realisateurs
 $lucas = new Realisateur("Lucas", "George", "14-05-1944", "M");
@@ -32,6 +34,7 @@ $starWarsSolo = new Film("Solo : A Star Wars Story", "23-05-2018", 135, $howard,
 
 // Castings
 $castingIndianaJones = new Casting($ford, $indianaJones, $indianaJones1);
+$castingMarion = new Casting($allen, $marion, $indianaJones1);
 $castingIndianaJones2 = new Casting($ford, $indianaJones, $indianaJones2);
 
 

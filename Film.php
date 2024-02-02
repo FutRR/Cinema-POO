@@ -93,11 +93,11 @@ class Film
 
     public function afficherCasting()
     {
+        $result = "Dans le film $this->titre, ";
         foreach ($this->castings as $casting) {
-            $result = "Dans le film " . $casting->getFilm() . ", " . $casting->getRole() . " a été joué par " . $casting->getActeur() . "<br>";
+            $result .= $casting->getRole() . " a été joué par " . $casting->getActeur() . "<br>";
         }
+        $result .= "<br>";
         return $result;
     }
-
-
 }

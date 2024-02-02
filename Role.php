@@ -48,6 +48,12 @@ class Role
         foreach ($this->castings as $acteur) {
             $result .= "- $acteur<br>";
         }
+        $result .= "<br>";
         return $result;
+    }
+
+    public function __toString()
+    {
+        return "$this->nom";
     }
 }
