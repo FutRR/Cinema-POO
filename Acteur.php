@@ -21,21 +21,22 @@ class Acteur extends Personne
         return $this;
     }
 
-    public function addCastings(Film $film)
+    public function addCastings(Casting $casting)
     {
-        $this->castings[] = $film;
+        $this->castings[] = $casting;
     }
 
     /* DISPLAY */
 
     public function afficherRoles()
     {
-        $result = "Films  dans lesquels " . parent::__toString() . " à joué :<br>";
-        foreach ($this->castings as $film) {
-            $result .= "- $film";
+        $result = "<h4>Films  dans lesquels $this à joué :</h4>";
+        $result .= "<ul>";
+        foreach ($this->castings as $casting) {
+            $result .= "<li>" . $casting->afficherActeurs() . "</li>";
         }
-        $result .= "<br>";
-        return $result;
+        $result .= "</ul>";
+        echo $result;
     }
 
 

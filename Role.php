@@ -44,12 +44,13 @@ class Role
 
     public function afficherActeurs()
     {
-        $result = "Acteurs ayant joué le role de $this->nom :<br>";
+        $result = "<h4>Acteurs ayant joué le role de $this->nom :</h4>";
+        $result .= "<ul>";
         foreach ($this->castings as $casting) {
-            $result .= "- " . $casting->afficherActeurs() . "<br>";
+            $result .= "<li>" . $casting->afficherActeurs() . "</li>";
         }
-        $result .= "<br>";
-        return $result;
+        $result .= "</ul>";
+        echo $result;
     }
 
     public function __toString()

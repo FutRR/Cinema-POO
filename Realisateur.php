@@ -31,12 +31,13 @@ class Realisateur extends Personne
 
     public function afficherFilmographie()
     {
-        $result = "Films réalisés par " . parent::__toString() . " :<br>";
+        $result = "<h4>Films réalisés par $this :</h4>";
+        $result .= "<ul>";
         foreach ($this->films as $film) {
-            $result .= "- $film";
+            $result .= "<li>$film</li>";
         }
-        $result .= "<br>";
-        return $result;
+        $result .= "</ul>";
+        echo $result;
     }
 
 }

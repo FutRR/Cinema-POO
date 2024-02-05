@@ -48,12 +48,13 @@ class Genre
 
     public function afficherFilms()
     {
-        $result = "Films d'$this->nom :<br>";
+        $result = "<h4>Films d'$this->nom :</h4>";
+        $result .= "<ul>";
         foreach ($this->films as $film) {
-            $result .= "- $film";
+            $result .= "<li>$film</li>";
         }
-        $result .= "<br>";
-        return $result;
+        $result .= "</ul>";
+        echo $result;
     }
 
 }
