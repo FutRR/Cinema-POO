@@ -32,7 +32,7 @@ class Acteur extends Personne
     {
         $result = "Films  dans lesquels " . parent::__toString() . " à joué :<br>";
         foreach ($this->castings as $film) {
-            $result .= " $film";
+            $result .= "- $film";
         }
         $result .= "<br>";
         return $result;

@@ -48,9 +48,9 @@ class Genre
 
     public function afficherFilms()
     {
-        $result = "Films de $this->nom :<br>";
+        $result = "Films d'$this->nom :<br>";
         foreach ($this->films as $film) {
-            $result .= " $film";
+            $result .= "- $film";
         }
         $result .= "<br>";
         return $result;

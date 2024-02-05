@@ -33,7 +33,7 @@ class Realisateur extends Personne
     {
         $result = "Films réalisés par " . parent::__toString() . " :<br>";
         foreach ($this->films as $film) {
-            $result .= " $film";
+            $result .= "- $film";
         }
         $result .= "<br>";
         return $result;

@@ -11,7 +11,7 @@ class Casting
         $this->acteur = $acteur;
         $this->acteur->addCastings($film);
         $this->role = $role;
-        $this->role->addCastings($acteur);
+        $this->role->addCastings($this);
         $this->film = $film;
         $this->film->addCastings($this);
     }
@@ -54,4 +54,9 @@ class Casting
         return $this;
     }
 
+
+    public function afficherActeurs()
+    {
+        return $this->acteur . " dans " . $this->film->getTitre() . "";
+    }
 }
