@@ -60,7 +60,7 @@ $spielberg = new Realisateur("Spielberg", "Steven", "18-12-1946", "M");
 $indianaJones1 = new Film("Les Aventuriers de l'Arche Perdue", "16-09-1981", 115, $spielberg, $aventure);
 $indianaJones2 = new Film("Indiana Jones et le Temple Maudit", "12-09-1984", 118, $spielberg, $aventure);
 
-$starWars4 = new Film("Star Wars, Episode IV : A New Hope", "19-10-1977", 121, $lucas, $sf);
+$starWars4 = new Film("Star Wars, Episode IV : Un Nouvel Espoir", "19-10-1977", 121, $lucas, $sf);
 $starWarsSolo = new Film("Solo : A Star Wars Story", "23-05-2018", 135, $howard, $sf);
 
 // Castings

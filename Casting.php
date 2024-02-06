@@ -59,4 +59,10 @@ class Casting
     {
         return "" . $this->acteur . " dans " . $this->film->getTitre() . "";
     }
+
+    public function afficherRoles()
+    {
+        return $this->film->getTitre() . " - " . $this->role . "";
+    }
+
 }

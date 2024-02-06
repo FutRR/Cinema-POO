@@ -33,7 +33,7 @@ class Acteur extends Personne
         $result = "<h4>Films  dans lesquels $this à joué :</h4>";
         $result .= "<ul>";
         foreach ($this->castings as $casting) {
-            $result .= "<li>" . $casting->afficherActeurs() . "</li>";
+            $result .= "<li>" . $casting->afficherRoles() . "</li>";
         }
         $result .= "</ul>";
         echo $result;
